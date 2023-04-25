@@ -17,6 +17,15 @@ function checkmark() {
   }
 }
 
+function textChange() {
+  const y = document.getElementsByClassName("blocklyText");
+  for (let i = 0; i < y.length; i++) {
+    console.log(i);
+
+    if (i.style.fill === "rgb(182, 180, 175)") y[(i.style.color = "#f0f")];
+  }
+}
+
 const categoryToolbox = {
   kind: "categoryToolbox",
   contents: [
@@ -481,183 +490,70 @@ const categoryToolbox = {
     },
     {
       kind: "category",
-      name: "Listor",
-      contents: [
-        {
-          kind: "block",
-          type: "lists_create_with",
-        },
-        {
-          kind: "block",
-          type: "lists_repeat",
-          inputs: {
-            NUM: {
-              shadow: {
-                type: "math_number",
-                fields: {
-                  NUM: "5",
-                },
-              },
-            },
-          },
-        },
-        {
-          kind: "block",
-          type: "lists_length",
-        },
-        {
-          kind: "block",
-          type: "lists_isEmpty",
-        },
-        {
-          kind: "block",
-          type: "lists_indexOf",
-          inputs: {
-            VALUE: {
-              block: {
-                type: "variables_get",
-                fields: {
-                  VAR: "{listVariable}",
-                },
-              },
-            },
-          },
-        },
-        {
-          kind: "block",
-          type: "lists_getIndex",
-          inputs: {
-            VALUE: {
-              block: {
-                type: "variables_get",
-                fields: {
-                  VAR: "{listVariable}",
-                },
-              },
-            },
-          },
-        },
-        {
-          kind: "block",
-          type: "lists_setIndex",
-          inputs: {
-            LIST: {
-              block: {
-                type: "variables_get",
-                fields: {
-                  VAR: "{listVariable}",
-                },
-              },
-            },
-          },
-        },
-        {
-          kind: "block",
-          type: "lists_getSublist",
-          inputs: {
-            LIST: {
-              block: {
-                type: "variables_get",
-                fields: {
-                  VAR: "{listVariable}",
-                },
-              },
-            },
-          },
-        },
-        {
-          kind: "block",
-          type: "lists_split",
-          inputs: {
-            DELIM: {
-              shadow: {
-                type: "text",
-                fields: {
-                  TEXT: ",",
-                },
-              },
-            },
-          },
-        },
-        {
-          kind: "block",
-          type: "lists_sort",
-        },
-      ],
-      categorystyle: "list_category",
-    },
-
-    {
-      kind: "sep",
-    },
-    {
-      kind: "category",
       name: "Variabler",
       contents: [],
       custom: "VARIABLE",
       categorystyle: "variable_category",
     },
-    {
-      kind: "category",
-      name: "Funktioner",
-      contents: [],
-      custom: "PROCEDURE",
-      categorystyle: "procedure_category",
-    },
   ],
 };
-
-Blockly.Themes.Halloween = Blockly.Theme.defineTheme("halloween", {
+Blockly.Themes.Knowit = Blockly.Theme.defineTheme("knowit", {
   base: Blockly.Themes.Classic,
   categoryStyles: {
-    list_category: {
-      colour: "#4a148c",
-    },
     logic_category: {
-      colour: "#8b4513",
+      colour: "#b7debd",
     },
     loop_category: {
-      colour: "#85E21F",
+      colour: "#7c3647",
+    },
+    math_category: {
+      colour: "#fac0b1",
     },
     text_category: {
-      colour: "#FE9B13",
+      colour: "#4b6455",
+    },
+    variable_category: {
+      colour: "#E4E1DB",
     },
   },
   blockStyles: {
-    list_blocks: {
-      colourPrimary: "#4a148c",
-      colourSecondary: "#AD7BE9",
-      colourTertiary: "#CDB6E9",
-    },
     logic_blocks: {
-      colourPrimary: "#8b4513",
-      colourSecondary: "#ff0000",
-      colourTertiary: "#C5EAFF",
+      colourPrimary: "#b7debd",
     },
     loop_blocks: {
-      colourPrimary: "#85E21F",
+      colourPrimary: "#7c3647",
       colourSecondary: "#ff0000",
       colourTertiary: "#C5EAFF",
     },
+    math_blocks: {
+      colourPrimary: "#fac0b1",
+    },
     text_blocks: {
-      colourPrimary: "#FE9B13",
-      colourSecondary: "#ff0000",
+      colourPrimary: "#4b6455",
+      colourSecondary: "#93a399",
       colourTertiary: "#C5EAFF",
+    },
+    variable_blocks: {
+      colourPrimary: "#E4E1DB",
     },
   },
   componentStyles: {
-    workspaceBackgroundColour: "#dbeede",
-    toolboxBackgroundColour: "#4b6455",
+    workspaceBackgroundColour: "#333",
+    toolboxBackgroundColour: "#333",
     toolboxForegroundColour: "#fff",
-    flyoutBackgroundColour: "#252526",
+    flyoutBackgroundColour: "#121212",
     flyoutForegroundColour: "#ccc",
-    flyoutOpacity: 1,
-    scrollbarColour: "#ff0000",
-    insertionMarkerColour: "#fff",
+    flyoutOpacity: 0.8,
+    scrollbarColour: "#e4e1db",
+    insertionMarkerColour: "#e4e1db",
     insertionMarkerOpacity: 0.3,
     scrollbarOpacity: 0.4,
-    cursorColour: "#d0d0d0",
+    cursorColour: "#e4e1db",
     blackBackground: "#333",
+  },
+  fontStyle: {
+    family: "Arial",
+    size: 10,
   },
 });
 
@@ -667,6 +563,6 @@ function start() {
   // Create main workspace.
   workspace = Blockly.inject("blocklyDiv", {
     toolbox: categoryToolbox,
-    theme: Blockly.Themes.Halloween,
+    theme: Blockly.Themes.Knowit,
   });
 }

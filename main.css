@@ -152,6 +152,15 @@ header {
   background-color: #121212;
 }
 
+.code-output textarea {
+  background-color: #121212;
+  color: #f1f0ed;
+}
+
+.code-output p {
+  color: #f0f;
+}
+
 .buttons-container {
   grid-area: 6 / 2 / 8 / 3;
 }
@@ -208,4 +217,8 @@ a.next-task,
 a.run-code {
   background-color: #2a4843;
   font-weight: bold;
+}
+
+.blocklySvg text {
+  fill: #f0f;
 }
