@@ -158,7 +158,7 @@ header {
 }
 
 .code-output p {
-  color: #f0f;
+  color: #f1f0ed;
 }
 
 .buttons-container {
@@ -221,4 +221,12 @@ a.run-code {
 
 .blocklySvg text {
   fill: #f0f;
+}
+
+.blocklyMainBackground {
+  stroke: none;
+}
+
+.blocklyToolboxDiv {
+  border-right: 2px solid #121212;
 }

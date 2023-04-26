@@ -1,19 +1,23 @@
 var taskComplete = false;
 let workspace = null;
 
-function openHint() {
-  let x = document.getElementById("hint");
-  if (x.style.display === "none") {
+function checkmark(taskComplete) {
+  console.log("i funktion");
+  let x = document.getElementById("checkmark");
+  console.log(x);
+  if (taskComplete === true) {
     x.style.display = "block";
   } else {
     x.style.display = "none";
   }
 }
 
-function checkmark() {
-  let x = document.getElementById("checkmark");
-  if (taskComplete === true) {
+function openHint() {
+  let x = document.getElementById("hint");
+  if (x.style.display === "none") {
     x.style.display = "block";
+  } else {
+    x.style.display = "none";
   }
 }
 
