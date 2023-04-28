@@ -1,12 +1,31 @@
 var taskComplete = false;
 let workspace = null;
+var colors = [
+  "#f0f",
+  "#7c3647",
+  "#4b6455",
+  "#b7debd",
+  "#fac0b1",
+  "#e4e1db",
+  "#DBEEDE",
+];
 
 function checkmark(taskComplete) {
-  console.log("i funktion");
   let x = document.getElementById("checkmark");
-  console.log(x);
   if (taskComplete === true) {
     x.style.display = "block";
+
+    confetti({
+      particleCount: 250,
+      spread: 60,
+      origin: {
+        x: 0.65,
+        y: 0.3,
+      },
+      colors: colors,
+      ticks: 220,
+      shapes: ["square"],
+    });
   } else {
     x.style.display = "none";
   }
