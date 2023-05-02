@@ -7,6 +7,7 @@
     <title>Coding Space</title>
     <link rel="stylesheet" href="main.css" />
 
+    <script src="content.js"></script>
     <script src="acorn_interpreter.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="./node_modules/blockly/blockly_compressed.js"></script>
@@ -30,7 +31,7 @@
       </header>
       <div class="container">
         <div class="description">
-          <p>
+          <p id="descriptionText">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum alias
             aperiam repellendus obcaecati magni atque cupiditate laborum modi.
             Quisquam tenetur ratione quia aut suscipit molestias possimus eius,
@@ -52,7 +53,7 @@
                 id="checkmark"
               />
             </div>
-            <p class="tasktext">
+            <p class="tasktext" id="taskText">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               Cupiditate architecto est consectetur autem odit.
             </p>
@@ -91,6 +92,7 @@
       </div>
     </main>
     <script src="codespace.js"></script>
+    <script src="viewContent.js"></script>
     <script>
       let myInterpreter = null;
       let runnerPid = 0;
@@ -216,7 +218,7 @@
       }
 
       function getCorrectAnswer() {
-        var correctCode = "abc";
+        var correctCode = task1.answer;
         return correctCode;
       }
     </script>
