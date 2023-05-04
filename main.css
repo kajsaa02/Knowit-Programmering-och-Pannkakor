@@ -94,6 +94,10 @@ header {
   margin-top: 60px;
 }
 
+.container-closed {
+  grid-template-rows: repeat(8, 1fr);
+}
+
 .description {
   grid-area: 1 / 1 / 3 / 2;
   color: #e4e1db;
@@ -147,8 +151,18 @@ header {
   border: 2px solid #121212;
   border-bottom: 0;
 }
+
+.blocklyDivClosed {
+  grid-area: 2 / 1 / 9 / 2;
+}
+
 .code-output {
   grid-area: 3 / 2 / 6 / 3;
+  background-color: #121212;
+}
+
+.code-output-closed {
+  grid-area: 2 / 2 / 6 / 3;
   background-color: #121212;
 }
 
@@ -220,6 +234,26 @@ a.run-code {
   font-weight: bold;
 }
 
+.description-closed {
+  display: none;
+}
+
+.arrow {
+  border: solid #f0f;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.down {
+  transform: rotate(45deg);
+}
+
+.arrow-closed {
+  transform: rotate(225deg);
+}
+
 .blocklySvg text {
   fill: #f0f;
 }
@@ -245,5 +279,13 @@ a.run-code {
 }
 
 .hub-main div h2 {
+  color: #f0f;
+}
+
+.blocklyTreeLabel {
+  color: #f1f0ed;
+}
+
+.blocklyTreeSelected {
   color: #f0f;
 }

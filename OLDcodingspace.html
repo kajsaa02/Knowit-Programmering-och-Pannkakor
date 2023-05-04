@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Coding Space</title>
     <link rel="stylesheet" href="main.css" />
+
     <script src="acorn_interpreter.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="./node_modules/blockly/blockly_compressed.js"></script>
     <script src="./node_modules/blockly/blocks_compressed.js"></script>
     <script src="./node_modules/blockly/javascript_compressed.js"></script>
@@ -16,7 +16,7 @@
     </script>
   </head>
   <body onload="start()">
-    <main id="canvas">
+    <main>
       <header>
         <div class="logo">
           <a href="./index.html">
@@ -27,28 +27,61 @@
           </a>
         </div>
       </header>
-      <div class="container" id="container">
-        <div class="description" id="description">
-          <p id="descriptionText">
-            <b>Välkommen till friläget! </b>Här kan du leka runt själv och hitta på nya program. När du vill testa ditt program tycker du på 
-            <i>Kör Kod</i> knappen som vanligt. </br>
-            Tänk på att koden inte sparas om du lämnar sidan!
+      <div class="container">
+        <div class="description">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum alias
+            aperiam repellendus obcaecati magni atque cupiditate laborum modi.
+            Quisquam tenetur ratione quia aut suscipit molestias possimus eius,
+            aliquam omnis a. Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Cum alias aperiam repellendus obcaecati magni atque cupiditate
+            laborum modi. Quisquam tenetur ratione quia aut suscipit molestias
+            possimus eius, aliquam omnis a. Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Cum alias aperiam repellendus
+            obcaecati magni atque cupiditate laborum modi. Quisquam tenetur
+            ratione quia aut suscipit molestias possimus eius, aliquam omnis a.
           </p>
         </div>
+        <div class="task-box">
+          <div class="task">
+            <div class="checkbox">
+              <img
+                src="/assets/icons/Tick-Digital-lollipop.svg"
+                alt="checkmark"
+                id="checkmark"
+              />
+            </div>
+            <p class="tasktext">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Cupiditate architecto est consectetur autem odit.
+            </p>
+          </div>
+        </div>
         <div class="blocklyDiv" id="blocklyDiv"></div>
-        <div class="code-output" id="codeOutput">
+        <div class="code-output">
           <!--<p id="output"></p>-->
           <textarea
             id="output"
             disabled="disabled"
-            style="display: inline-block; height: 100%; width: 98.5%"
+            style="display: inline-block; height: 100%; width: 100%"
           >
           </textarea>
         </div>
-        <p><a href="javascript:closeDescription()" class="arrow down" id="arrow"></a></p>
-
         <div class="buttons-container">
+          <div class="hint-container">
+            <img
+              src="/assets/icons/Light-bulb-Digital-black.svg"
+              alt="hint button"
+              onclick="openHint()"
+            />
+            <div class="hint" id="hint">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Cupiditate architecto est consectetur autem odit.
+            </div>
+          </div>
           <div class="buttons">
+            <a href="#" class="next-task">Nästa Uppgift</a>
+            <a href="#" class="prev-task">Förra Uppgiften</a>
             <a href="#" class="run-code" id="runButton" onclick="runCode()"
               >Kör Kod</a
             >
@@ -57,7 +90,6 @@
       </div>
     </main>
     <script src="codespace.js"></script>
-    <script src="viewContent.js"></script>
     <script>
       let myInterpreter = null;
       let runnerPid = 0;
@@ -183,7 +215,7 @@
       }
 
       function getCorrectAnswer() {
-        var correctCode = task1.answer;
+        var correctCode = "hej";
         return correctCode;
       }
     </script>

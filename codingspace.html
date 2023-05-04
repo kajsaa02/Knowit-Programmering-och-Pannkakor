@@ -7,7 +7,9 @@
     <title>Coding Space</title>
     <link rel="stylesheet" href="main.css" />
 
+    <script src="content.js"></script>
     <script src="acorn_interpreter.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="./node_modules/blockly/blockly_compressed.js"></script>
     <script src="./node_modules/blockly/blocks_compressed.js"></script>
     <script src="./node_modules/blockly/javascript_compressed.js"></script>
@@ -16,7 +18,7 @@
     </script>
   </head>
   <body onload="start()">
-    <main>
+    <main id="canvas">
       <header>
         <div class="logo">
           <a href="./index.html">
@@ -29,7 +31,7 @@
       </header>
       <div class="container">
         <div class="description">
-          <p>
+          <p id="descriptionText">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum alias
             aperiam repellendus obcaecati magni atque cupiditate laborum modi.
             Quisquam tenetur ratione quia aut suscipit molestias possimus eius,
@@ -37,9 +39,9 @@
             elit. Cum alias aperiam repellendus obcaecati magni atque cupiditate
             laborum modi. Quisquam tenetur ratione quia aut suscipit molestias
             possimus eius, aliquam omnis a. Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Cum alias aperiam repellendus
-            obcaecati magni atque cupiditate laborum modi. Quisquam tenetur
-            ratione quia aut suscipit molestias possimus eius, aliquam omnis a.
+            consectetur adipisicing elit. Cum alias aperiam obcaecati magni
+            atque cupiditate laborum modi. Quisquam tenetur ratione quia aut
+            suscipit molestias possimus eius, aliquam omnis a.
           </p>
         </div>
         <div class="task-box">
@@ -51,7 +53,7 @@
                 id="checkmark"
               />
             </div>
-            <p class="tasktext">
+            <p class="tasktext" id="taskText">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               Cupiditate architecto est consectetur autem odit.
             </p>
@@ -63,7 +65,7 @@
           <textarea
             id="output"
             disabled="disabled"
-            style="display: inline-block; height: 100%; width: 100%"
+            style="display: inline-block; height: 100%; width: 98.5%"
           >
           </textarea>
         </div>
@@ -90,6 +92,7 @@
       </div>
     </main>
     <script src="codespace.js"></script>
+    <script src="viewContent.js"></script>
     <script>
       let myInterpreter = null;
       let runnerPid = 0;
@@ -215,7 +218,7 @@
       }
 
       function getCorrectAnswer() {
-        var correctCode = "hej";
+        var correctCode = task1.answer;
         return correctCode;
       }
     </script>

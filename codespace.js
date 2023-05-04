@@ -10,20 +10,51 @@ var colors = [
   "#DBEEDE",
 ];
 
+// var taskTracker = [];
+// var currentTask = 1;
+
+// window.onload = function () {x
+//   checkTask(currentTask);
+// };
+
+// function checkTask(currentTask) {
+//   switch (currentTask) {
+//     case 1:
+//       displayTask();
+//       break;
+//     case 2: {
+//     }
+//   }
+// }
+
+function closeDescription() {
+  console.log("i funktion");
+  var arrow = document.getElementById("arrow");
+  var description = document.getElementById("description");
+  var codeoutput = document.getElementById("codeOutput");
+  var blockly = document.getElementById("blocklyDiv");
+  var container = document.getElementById("container");
+  arrow.classList.toggle("arrow-closed");
+  container.classList.toggle("container-closed");
+  codeoutput.classList.toggle("code-output-closed");
+  description.classList.toggle("description-closed");
+  blockly.classList.toggle("blocklyDivClosed");
+}
+
 function checkmark(taskComplete) {
   let x = document.getElementById("checkmark");
   if (taskComplete === true) {
     x.style.display = "block";
 
     confetti({
-      particleCount: 250,
-      spread: 60,
+      particleCount: 100,
+      spread: 50,
       origin: {
         x: 0.65,
         y: 0.3,
       },
       colors: colors,
-      ticks: 220,
+      ticks: 180,
       shapes: ["square"],
     });
   } else {
