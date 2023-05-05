@@ -10,22 +10,8 @@ var colors = [
   "#DBEEDE",
 ];
 
-// var taskTracker = [];
-// var currentTask = 1;
-
-// window.onload = function () {x
-//   checkTask(currentTask);
-// };
-
-// function checkTask(currentTask) {
-//   switch (currentTask) {
-//     case 1:
-//       displayTask();
-//       break;
-//     case 2: {
-//     }
-//   }
-// }
+var taskTracker = [];
+var currentTask = 0;
 
 function closeDescription() {
   console.log("i funktion");
@@ -607,7 +593,7 @@ Blockly.Themes.Knowit = Blockly.Theme.defineTheme("knowit", {
   },
   fontStyle: {
     family: "Arial",
-    size: 10,
+    size: 11,
   },
 });
 

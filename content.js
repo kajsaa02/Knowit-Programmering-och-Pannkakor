@@ -3,6 +3,7 @@ const task1 = {
   task: 'Få datorn att skriva ut "Hello World!"',
   hint: "this is the hint",
   answer: "hello world!",
+  facitcheck: true,
 };
 
 const task2 = {
@@ -10,6 +11,7 @@ const task2 = {
   task: "Be datorn räkna ut 520+380 och skriva ut resultatet",
   hint: "Tänk på att du kan koppla ihop olika typer av block för att få ut svaret!",
   answer: "900",
+  facitcheck: true,
 };
 
 const task3 = {
@@ -17,6 +19,7 @@ const task3 = {
   task: "this is the task",
   hint: "this is the hint",
   answer: "abc",
+  facitcheck: true,
 };
 
 const task4 = {
@@ -24,6 +27,7 @@ const task4 = {
   task: "this is the task",
   hint: "this is the hint",
   answer: "abc",
+  facitcheck: true,
 };
 
 const task5 = {
@@ -31,6 +35,7 @@ const task5 = {
   task: "this is the task",
   hint: "this is the hint",
   answer: "abc",
+  facitcheck: true,
 };
 
 const task6 = {
@@ -38,6 +43,7 @@ const task6 = {
   task: "this is the task",
   hint: "this is the hint",
   answer: "abc",
+  facitcheck: true,
 };
 
 const task7 = {
@@ -45,6 +51,7 @@ const task7 = {
   task: "this is the task",
   hint: "this is the hint",
   answer: "abc",
+  facitcheck: true,
 };
 
 const task8 = {
@@ -52,6 +59,7 @@ const task8 = {
   task: "this is the task",
   hint: "this is the hint",
   answer: "abc",
+  facitcheck: true,
 };
 
 const task9 = {
@@ -59,6 +67,7 @@ const task9 = {
   task: "this is the task",
   hint: "this is the hint",
   answer: "abc",
+  facitcheck: true,
 };
 
 const task10 = {
@@ -66,6 +75,7 @@ const task10 = {
   task: "this is the task",
   hint: "this is the hint",
   answer: "abc",
+  facitcheck: true,
 };
 
 const task11 = {
@@ -73,6 +83,7 @@ const task11 = {
   task: "this is the task",
   hint: "this is the hint",
   answer: "abc",
+  facitcheck: true,
 };
 
 const task12 = {
@@ -80,6 +91,7 @@ const task12 = {
   task: "this is the task",
   hint: "this is the hint",
   answer: "abc",
+  facitcheck: true,
 };
 
 const task13 = {
@@ -87,6 +99,7 @@ const task13 = {
   task: "this is the task",
   hint: "this is the hint",
   answer: "abc",
+  facitcheck: true,
 };
 
 const task14 = {
@@ -94,6 +107,7 @@ const task14 = {
   task: "this is the task",
   hint: "this is the hint",
   answer: "abc",
+  facitcheck: true,
 };
 
 const task15 = {
@@ -101,6 +115,7 @@ const task15 = {
   task: "this is the task",
   hint: "this is the hint",
   answer: "abc",
+  facitcheck: true,
 };
 
 const task16 = {
@@ -108,4 +123,5 @@ const task16 = {
   task: "this is the task",
   hint: "this is the hint",
   answer: "abc",
+  facitcheck: true,
 };
