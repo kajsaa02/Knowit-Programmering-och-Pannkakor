@@ -274,8 +274,28 @@ a.run-code {
 }
 
 .module-one {
-  top: 50%;
-  left: 50%;
+  top: 20%;
+  left: 20%;
+}
+
+.module-two {
+  top: 55%;
+  left: 35%;
+}
+
+.module-three {
+  top: 35%;
+  left: 60%;
+}
+
+.module-four {
+  top: 65%;
+  left: 80%;
+}
+
+.freemode {
+  top: 70%;
+  left: 5%;
 }
 
 .hub-main div h2 {

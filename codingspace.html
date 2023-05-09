@@ -82,8 +82,20 @@
             </div>
           </div>
           <div class="buttons">
-            <a href="#" class="next-task">Nästa Uppgift</a>
-            <a href="#" class="prev-task">Förra Uppgiften</a>
+            <a
+              href="#"
+              class="next-task"
+              id="nextTaskButton"
+              onclick="loadNextTask()"
+              >Nästa Uppgift</a
+            >
+            <a
+              href="#"
+              class="prev-task"
+              id="prevTaskButton"
+              onclick="loadPrevTask()"
+              >Förra Uppgiften</a
+            >
             <a href="#" class="run-code" id="runButton" onclick="runCode()"
               >Kör Kod</a
             >
@@ -96,6 +108,8 @@
     <script>
       let myInterpreter = null;
       let runnerPid = 0;
+      var currentTaskNo = localStorage.getItem("currentTask");
+      var taskTrackerArray = localStorage.getItem("taskTracker");
 
       const outputArea = document.getElementById("output");
       const runButton = document.getElementById("runButton");
@@ -206,19 +220,21 @@
       function checkCompletion(output) {
         console.log(output);
         var userCode = output.slice(34, -24);
-        var correctCode = getCorrectAnswer();
+        if (tasksobject["tasks"][currentTaskNo]["facitcheck"] === true) {
+          var correctCode = getCorrectAnswer();
 
-        if (userCode === correctCode) {
-          let taskComplete = true;
-          checkmark(taskComplete);
-        } else {
-          let taskComplete = false;
-          checkmark(taskComplete);
+          if (userCode === correctCode) {
+            let taskComplete = true;
+            checkmark(taskComplete);
+          } else {
+            let taskComplete = false;
+            checkmark(taskComplete);
+          }
         }
       }
 
       function getCorrectAnswer() {
-        var correctCode = task1.answer;
+        var correctCode = tasksobject["tasks"][currentTaskNo]["answer"];
         return correctCode;
       }
     </script>

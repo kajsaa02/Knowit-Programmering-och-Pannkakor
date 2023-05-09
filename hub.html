@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Programmering och Pannkakor -- Knowit</title>
     <link rel="stylesheet" href="main.css" />
+    <script>
+      const clickedModuleOne = 1;
+      const clickedModuleTwo = 2;
+      const clickedModuleThree = 3;
+      const clickedModuleFour = 4;
+    </script>
   </head>
   <body>
     <header>
@@ -20,13 +26,50 @@
     </header>
     <main class="hub-main">
       <div class="module-one">
-        <h2>1</h2>
-        <h3>här är text</h3>
+        <a href="codingspace.html" onclick="saveClickedTask(clickedModuleOne)">
+          <h2>1</h2>
+          <h3>här är text</h3>
+        </a>
       </div>
-      <div class="module-two"></div>
-      <div class="module-three"></div>
-      <div class="module-four"></div>
-      <div class="module-five"></div>
+      <div class="module-two">
+        <a href="codingspace.html" onclick="saveClickedTask(clickedModuleTwo)">
+          <h2>1</h2>
+          <h3>här är text</h3>
+        </a>
+      </div>
+      <div class="module-three">
+        <a
+          href="codingspace.html"
+          onclick="saveClickedTask(clickedModuleThree)"
+        >
+          <h2>1</h2>
+          <h3>här är text</h3>
+        </a>
+      </div>
+      <div class="module-four">
+        <a href="codingspace.html" onclick="saveClickedTask(clickedModuleFour)">
+          <h2>1</h2>
+          <h3>här är text</h3>
+        </a>
+      </div>
+      <div class="freemode">
+        <a href="sandbox.html">
+          <img src="#" alt="icon" />
+          <h3>Friläge</h3>
+        </a>
+      </div>
     </main>
+    <script>
+      function saveClickedTask(clikedModule) {
+        if (clikedModule == 1) {
+          for (var i = 0; i > 3; i++) {
+            if (taskObjects["tasks"][i]["complete"] == false) {
+              localStorage.setItem("currentTask", i);
+            }
+          }
+        }
+        localStorage.setItem("currentTask", clicked);
+      }
+    </script>
   </body>
 </html>
