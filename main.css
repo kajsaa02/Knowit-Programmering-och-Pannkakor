@@ -23,7 +23,8 @@ header {
   width: 100%;
 }
 
-.logo {
+.logo,
+.goback {
   display: flex;
   align-items: center;
   margin-right: 10px;
@@ -37,6 +38,13 @@ header {
 
 .logo img:hover {
   opacity: 0.8;
+}
+
+.goback img {
+  width: 40px;
+  margin-left: 12px;
+  transition: 0.2s;
+  transform: rotate(180deg);
 }
 
 @media only screen and (max-width: 600px) {
@@ -267,10 +275,17 @@ a.run-code {
 }
 
 .hub-main div {
-  width: 150px;
-  height: 150px;
+  width: 15%;
+  aspect-ratio: 1/1;
   background-color: #f1f0ed;
   position: absolute;
+}
+
+@media only screen and (min-width: 1200px) {
+  .hub-main div {
+    width: 10%;
+    aspect-ratio: 1/1;
+  }
 }
 
 .module-one {
@@ -300,6 +315,16 @@ a.run-code {
 
 .hub-main div h2 {
   color: #f0f;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+}
+
+.hub-main div h3 {
+  display: flex;
+  justify-content: center;
 }
 
 .blocklyTreeLabel {

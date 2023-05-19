@@ -10,16 +10,6 @@ var colors = [
   "#DBEEDE",
 ];
 
-if (typeof taskTracker == "undefined") {
-  var taskTracker = [];
-  var currentTask = 0;
-
-  var taskTrackerString = JSON.stringify(taskTracker);
-
-  localStorage.setItem("taskTracker", taskTracker);
-  localStorage.setItem("currentTask", currentTask);
-}
-
 const categoryToolbox = {
   kind: "categoryToolbox",
   contents: [
@@ -496,24 +486,25 @@ Blockly.Themes.Knowit = Blockly.Theme.defineTheme("knowit", {
   base: Blockly.Themes.Classic,
   categoryStyles: {
     logic_category: {
-      colour: "#b7debd",
+      colour: "#304B3B",
     },
     loop_category: {
       colour: "#7c3647",
     },
     math_category: {
-      colour: "#fac0b1",
+      colour: "#376481",
     },
     text_category: {
-      colour: "#4b6455",
+      colour: "#6D7578",
     },
     variable_category: {
-      colour: "#E4E1DB",
+      colour: "#954991",
     },
   },
   blockStyles: {
     logic_blocks: {
-      colourPrimary: "#b7debd",
+      colourPrimary: "#304B3B",
+      colourSecondary: "#f0f",
     },
     loop_blocks: {
       colourPrimary: "#7c3647",
@@ -521,15 +512,15 @@ Blockly.Themes.Knowit = Blockly.Theme.defineTheme("knowit", {
       colourTertiary: "#C5EAFF",
     },
     math_blocks: {
-      colourPrimary: "#fac0b1",
+      colourPrimary: "#376481",
     },
     text_blocks: {
-      colourPrimary: "#4b6455",
+      colourPrimary: "#6D7578",
       colourSecondary: "#93a399",
       colourTertiary: "#C5EAFF",
     },
     variable_blocks: {
-      colourPrimary: "#E4E1DB",
+      colourPrimary: "#954991",
     },
   },
   componentStyles: {
@@ -605,13 +596,24 @@ function closeHintNewTask() {
   return;
 }
 
-function textChange() {
-  const y = document.getElementsByClassName("blocklyText");
-  for (let i = 0; i < y.length; i++) {
-    console.log(i);
+// function textChange() {
+//   const y = document.getElementsByClassName("blocklyText");
+//   for (let i = 0; i < y.length; i++) {
+//     console.log(i);
 
-    if (i.style.fill === "rgb(182, 180, 175)") y[(i.style.color = "#f0f")];
-  }
+//     if (i.style.fill === "rgb(182, 180, 175)") y[(i.style.color = "#f0f")];
+//   }
+// }
+
+function setComplete() {
+  var tasksobject = JSON.parse(localStorage.getItem("tasksobject"));
+  var currentTaskNumber = localStorage.getItem("currentTask");
+
+  tasksobject["tasks"][currentTaskNumber]["complete"] = true;
+
+  localStorage.setItem("tasksobject", JSON.stringify(tasksobject));
+
+  return;
 }
 
 function start() {

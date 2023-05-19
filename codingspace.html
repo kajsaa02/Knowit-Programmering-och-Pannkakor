@@ -7,7 +7,7 @@
     <title>Coding Space</title>
     <link rel="stylesheet" href="main.css" />
 
-    <script src="content.js"></script>
+    <!-- <script src="content.js"></script> -->
     <script src="acorn_interpreter.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="./node_modules/blockly/blockly_compressed.js"></script>
@@ -20,6 +20,15 @@
   <body onload="start()">
     <main id="canvas">
       <header>
+        <div class="goback">
+          <a href="./hub.html">
+            <img
+              src="/assets/icons/Arrow-short-Digital-black.svg"
+              alt="arrow back"
+            />
+            <p class="nav-goback">go to hub</p>
+          </a>
+        </div>
         <div class="logo">
           <a href="./index.html">
             <img
@@ -117,6 +126,8 @@
       Blockly.JavaScript.addReservedWords("highlightBlock");
       Blockly.serialization.workspaces.load(workspace);
 
+      displayContent();
+
       function initApi(interpreter, globalObject) {
         // Add an API function for the alert() block, generated for "text_print" blocks.
         const wrapperAlert = function alert(text) {
@@ -210,7 +221,7 @@
         }
       }
 
-      demoWorkspace.addChangeListener(function (event) {
+      workspace.addChangeListener(function (event) {
         if (!event.isUiEvent) {
           // Something changed.  Interpreter needs to be reloaded.
           resetStepUi(true);
@@ -220,20 +231,27 @@
       function checkCompletion(output) {
         console.log(output);
         var userCode = output.slice(34, -24);
+        var tasksobject = JSON.parse(localStorage.getItem("tasksobject"));
+        console.log(tasksobject);
+
         if (tasksobject["tasks"][currentTaskNo]["facitcheck"] === true) {
           var correctCode = getCorrectAnswer();
 
           if (userCode === correctCode) {
             let taskComplete = true;
             checkmark(taskComplete);
+            setComplete();
           } else {
             let taskComplete = false;
+            console.log("i else");
             checkmark(taskComplete);
           }
         }
       }
 
       function getCorrectAnswer() {
+        var tasksobject = JSON.parse(localStorage.getItem("tasksobject"));
+
         var correctCode = tasksobject["tasks"][currentTaskNo]["answer"];
         return correctCode;
       }

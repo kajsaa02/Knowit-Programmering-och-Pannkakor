@@ -1,7 +1,10 @@
 displayContent();
+//var tasksobject = JSON.parse(localStorage.getItem("tasksobjectLS") || "[]");
 
 function displayContent() {
   document.getElementById("output").value = "";
+
+  var tasksobject = JSON.parse(localStorage.getItem("tasksobject"));
 
   var CurrentTaskNumber = localStorage.getItem("currentTask"); //return number
 
@@ -14,6 +17,7 @@ function displayContent() {
 
   const hintContent = tasksobject["tasks"][CurrentTaskNumber]["hint"];
   document.getElementById("hint").innerHTML = hintContent;
+  return;
 }
 
 function loadNextTask() {
@@ -21,9 +25,12 @@ function loadNextTask() {
 
   currentTaskNumber++;
   localStorage.setItem("currentTask", currentTaskNumber);
+  setComplete();
   closeHintNewTask();
   workspace.clear();
   displayContent();
+  let x = document.getElementById("checkmark");
+  console.log(taskComplete);
 }
 
 function loadPrevTask() {
@@ -36,5 +43,7 @@ function loadPrevTask() {
     closeHintNewTask();
     workspace.clear();
     displayContent();
+    checkmark();
+    console.log(taskComplete);
   }
 }

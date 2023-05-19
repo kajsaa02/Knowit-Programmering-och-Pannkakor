@@ -6,7 +6,7 @@ const tasksobject = {
       hint: "this is the hint",
       answer: "Hello World!",
       facitcheck: true,
-      complete: false,
+      complete: true,
     },
     {
       description: "this is the second description",
@@ -14,10 +14,40 @@ const tasksobject = {
       hint: "Tänk på att du kan koppla ihop olika typer av block för att få ut svaret!",
       answer: "900",
       facitcheck: true,
+      complete: true,
+    },
+    {
+      description: "this is the third description",
+      task: "Skapa en variabel som heter “namn” som har ditt namn som värde. Be datorn skriva ut “Hej *ditt namn*!”",
+      hint: "För att kunna skriva ut både text och värdet på variablen i samma skrivblock behöver du använda blocket “skapa text med” efter “skriv”!",
+      facitcheck: false,
       complete: false,
     },
     {
-      description: "this is a description",
+      description: "this is the fourth description",
+      task: "Be datorn fråga dig efter ett nummer. Spara svaret i en variabel och skriv ut det dubbla värdet av numret.",
+      hint: "För att spara siffran som användaren skriver in, koppla ihop “sätt variabel” blocket med “fråga efter” blocket!",
+      facitcheck: false,
+      complete: false,
+    },
+    {
+      description: "this is the fifth description",
+      task: "Skriv ut alla siffror mellan 1-10 genom att använda en loop",
+      hint: "Tänk på att deklarera variablen innan loopen!",
+      answer: "hello world!",
+      facitcheck: true,
+      complete: false,
+    },
+    {
+      description: "this is the sixth description",
+      task: "Skriv ut 2048 serien (1,2,4,8,16 osv, upp till 2048) genom att använda en loop",
+      hint: "Tänk på var du multiplicerar din variabel för att få ut nästa tal!",
+      answer: "900",
+      facitcheck: true,
+      complete: false,
+    },
+    {
+      description: "this is the seventh description",
       task: 'Få datorn att skriva ut "Hello World!"',
       hint: "this is the hint",
       answer: "hello world!",
@@ -25,7 +55,7 @@ const tasksobject = {
       complete: false,
     },
     {
-      description: "this is the second description",
+      description: "this is the eighth description",
       task: "Be datorn räkna ut 520+380 och skriva ut resultatet",
       hint: "Tänk på att du kan koppla ihop olika typer av block för att få ut svaret!",
       answer: "900",
@@ -33,39 +63,7 @@ const tasksobject = {
       complete: false,
     },
     {
-      description: "this is a description",
-      task: 'Få datorn att skriva ut "Hello World!"',
-      hint: "this is the hint",
-      answer: "hello world!",
-      facitcheck: true,
-      complete: false,
-    },
-    {
-      description: "this is the second description",
-      task: "Be datorn räkna ut 520+380 och skriva ut resultatet",
-      hint: "Tänk på att du kan koppla ihop olika typer av block för att få ut svaret!",
-      answer: "900",
-      facitcheck: true,
-      complete: false,
-    },
-    {
-      description: "this is a description",
-      task: 'Få datorn att skriva ut "Hello World!"',
-      hint: "this is the hint",
-      answer: "hello world!",
-      facitcheck: true,
-      complete: false,
-    },
-    {
-      description: "this is the second description",
-      task: "Be datorn räkna ut 520+380 och skriva ut resultatet",
-      hint: "Tänk på att du kan koppla ihop olika typer av block för att få ut svaret!",
-      answer: "900",
-      facitcheck: true,
-      complete: false,
-    },
-    {
-      description: "this is a description",
+      description: "this is the ninth description",
       task: 'Få datorn att skriva ut "Hello World!"',
       hint: "this is the hint",
       answer: "hello world!",
@@ -130,3 +128,9 @@ const tasksobject = {
     },
   ],
 };
+
+localStorage.setItem("tasksobject", JSON.stringify(tasksobject));
+
+// const tasksobjectString = JSON.stringify(tasksobject);
+// localStorage.setItem("content", tasksobjectString);
+// console.log(localStorage);

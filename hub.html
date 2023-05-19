@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Programmering och Pannkakor -- Knowit</title>
     <link rel="stylesheet" href="main.css" />
+
     <script>
       const clickedModuleOne = 1;
       const clickedModuleTwo = 2;
       const clickedModuleThree = 3;
       const clickedModuleFour = 4;
+      //var tasksobject = JSON.parse(localStorage.getItem("tasksobject") || "[]");
     </script>
   </head>
   <body>
@@ -25,50 +27,99 @@
       </div>
     </header>
     <main class="hub-main">
-      <div class="module-one">
-        <a href="codingspace.html" onclick="saveClickedTask(clickedModuleOne)">
-          <h2>1</h2>
-          <h3>här är text</h3>
-        </a>
+      <div class="module-one" onclick="saveClickedTask(clickedModuleOne)">
+        <h2>1</h2>
+        <h3>Variabler och Inputs</h3>
       </div>
-      <div class="module-two">
-        <a href="codingspace.html" onclick="saveClickedTask(clickedModuleTwo)">
-          <h2>1</h2>
-          <h3>här är text</h3>
-        </a>
+      <div class="module-two" onclick="saveClickedTask(clickedModuleTwo)">
+        <h2>2</h2>
+        <h3>Loopar</h3>
       </div>
-      <div class="module-three">
-        <a
-          href="codingspace.html"
-          onclick="saveClickedTask(clickedModuleThree)"
-        >
-          <h2>1</h2>
-          <h3>här är text</h3>
-        </a>
+      <div class="module-three" onclick="saveClickedTask(clickedModuleThree)">
+        <h2>3</h2>
+        <h3>If-satser</h3>
       </div>
-      <div class="module-four">
-        <a href="codingspace.html" onclick="saveClickedTask(clickedModuleFour)">
-          <h2>1</h2>
-          <h3>här är text</h3>
-        </a>
+      <div class="module-four" onclick="saveClickedTask(clickedModuleFour)">
+        <h2>4</h2>
+        <h3>cool copy här</h3>
       </div>
-      <div class="freemode">
-        <a href="sandbox.html">
-          <img src="#" alt="icon" />
-          <h3>Friläge</h3>
-        </a>
+      <div class="freemode" onclick="gotoSandbox();">
+        <img src="#" alt="icon" />
+        <h3>Friläge</h3>
       </div>
     </main>
+    <script src="content.js"></script>
     <script>
       function saveClickedTask(clikedModule) {
-        if (clikedModule == 1) {
-          for (var i = 0; i > 3; i++) {
-            if (taskObjects["tasks"][i]["complete"] == false) {
-              localStorage.setItem("currentTask", i);
+        if (clikedModule === 1) {
+          var taskFound = false;
+          var i = 0;
+          if (tasksobject["tasks"][3]["complete"] == true) {
+            localStorage.setItem("currentTask", "0");
+          } else {
+            while (taskFound === false) {
+              if (tasksobject["tasks"][i]["complete"] == false) {
+                taskFound = true;
+                localStorage.setItem("currentTask", i);
+              } else {
+                i++;
+              }
             }
           }
         }
-        localStorage.setItem("currentTask", clicked);
+
+        if (clikedModule === 2) {
+          var taskFound = false;
+          var i = 4;
+          if (tasksobject["tasks"][7]["complete"] == true) {
+            localStorage.setItem("currentTask", "0");
+          } else {
+            while (taskFound === false) {
+              if (tasksobject["tasks"][i]["complete"] == false) {
+                taskFound = true;
+                localStorage.setItem("currentTask", i);
+              } else {
+                i++;
+              }
+            }
+          }
+        }
+
+        if (clikedModule === 3) {
+          var taskFound = false;
+          var i = 8;
+          if (tasksobject["tasks"][11]["complete"] == true) {
+            localStorage.setItem("currentTask", "0");
+          } else {
+            while (taskFound === false) {
+              if (tasksobject["tasks"][i]["complete"] == false) {
+                taskFound = true;
+                localStorage.setItem("currentTask", i);
+              } else {
+                i++;
+              }
+            }
+          }
+        }
+
+        if (clikedModule === 4) {
+          var taskFound = false;
+          var i = 12;
+          if (tasksobject["tasks"][15]["complete"] == true) {
+            localStorage.setItem("currentTask", "0");
+          } else {
+            while (taskFound === false) {
+              if (tasksobject["tasks"][i]["complete"] == false) {
+                taskFound = true;
+                localStorage.setItem("currentTask", i);
+              } else {
+                i++;
+              }
+            }
+          }
+        }
+
+        window.open("codingspace.html", "_self");
       }
     </script>
   </body>
