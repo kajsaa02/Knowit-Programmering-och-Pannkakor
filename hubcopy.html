@@ -98,6 +98,16 @@
     </main>
     <script src="content.js"></script>
     <script>
+      if (!localStorage.getItem("tasksobject")) {
+        var defaultContentString = JSON.stringify(defaultContent);
+        localStorage.setItem("tasksobject", defaultContentString);
+      }
+
+      if (!localStorage.getItem("currentTask")) {
+        localStorage.setItem("currentTask", 0);
+      }
+
+      var tasksobject = JSON.parse(localStorage.getItem("tasksobject"));
       function saveClickedTask(clikedModule) {
         if (clikedModule === 1) {
           var taskFound = false;

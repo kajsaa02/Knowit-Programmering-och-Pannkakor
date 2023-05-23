@@ -5,6 +5,12 @@ function displayContent() {
   document.getElementById("output").value = "";
   console.log(localStorage);
 
+  let x = document.getElementById("checkmark");
+  x.style.display = "none";
+
+  var nextTaskButton = document.getElementById("nextTaskButton");
+  nextTaskButton.classList.remove("next-task-complete");
+
   var tasksobject = JSON.parse(localStorage.getItem("tasksobject"));
 
   var CurrentTaskNumber = localStorage.getItem("currentTask"); //return number
@@ -22,21 +28,26 @@ function displayContent() {
   var checkComplete = tasksobject["tasks"][CurrentTaskNumber]["complete"];
   var nextTaskButton = document.getElementById("nextTaskButton");
 
-  if (checkComplete === true) {
+  if (tasksobject["tasks"][CurrentTaskNumber]["complete"] === true) {
+    x.style.display = "block";
     nextTaskButton.classList.add("next-task-complete");
-  } else {
-    nextTaskButton.classList.remove("next-task-complete");
   }
+
+  // if (checkComplete === true) {
+  //   nextTaskButton.classList.add("next-task-complete");
+  // } else {
+  //   nextTaskButton.classList.remove("next-task-complete");
+  // }
 
   return;
 }
 
 function loadNextTask() {
   var currentTaskNumber = localStorage.getItem("currentTask");
-
+  setComplete();
   currentTaskNumber++;
   localStorage.setItem("currentTask", currentTaskNumber);
-  setComplete();
+
   closeHintNewTask();
   workspace.clear();
   displayContent();

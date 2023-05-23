@@ -1,4 +1,4 @@
-const tasksobject = {
+const defaultContent = {
   tasks: [
     {
       description:
@@ -7,7 +7,7 @@ const tasksobject = {
       hint: "this is the hint",
       answer: "Hello World!",
       facitcheck: true,
-      complete: true,
+      complete: false,
     },
     {
       description: "this is the second description",
@@ -15,7 +15,7 @@ const tasksobject = {
       hint: "Tänk på att du kan koppla ihop olika typer av block för att få ut svaret!",
       answer: "900",
       facitcheck: true,
-      complete: true,
+      complete: false,
     },
     {
       description: "this is the third description",
@@ -129,8 +129,6 @@ const tasksobject = {
     },
   ],
 };
-
-localStorage.setItem("tasksobject", JSON.stringify(tasksobject));
 
 // const tasksobjectString = JSON.stringify(tasksobject);
 // localStorage.setItem("content", tasksobjectString);
