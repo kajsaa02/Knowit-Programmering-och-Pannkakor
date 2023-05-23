@@ -18,6 +18,15 @@
   <body onload="start()">
     <main id="canvas">
       <header>
+        <div class="goback">
+          <a href="./hub.html">
+            <img
+              src="/assets/icons/Arrow-short-Digital-black.svg"
+              alt="arrow back"
+            />
+            <p class="nav-goback">go to hub</p>
+          </a>
+        </div>
         <div class="logo">
           <a href="./index.html">
             <img
@@ -27,8 +36,8 @@
           </a>
         </div>
       </header>
-      <div class="container" id="container">
-        <div class="description" id="description">
+      <div class="container">
+        <div class="description">
           <p id="descriptionText">
             <b>Välkommen till friläget! </b>Här kan du leka runt själv och hitta på nya program. När du vill testa ditt program tycker du på 
             <i>Kör Kod</i> knappen som vanligt. </br>
@@ -36,7 +45,7 @@
           </p>
         </div>
         <div class="blocklyDiv" id="blocklyDiv"></div>
-        <div class="code-output" id="codeOutput">
+        <div class="code-output">
           <!--<p id="output"></p>-->
           <textarea
             id="output"
@@ -45,8 +54,6 @@
           >
           </textarea>
         </div>
-        <p><a href="javascript:closeDescription()" class="arrow down" id="arrow"></a></p>
-
         <div class="buttons-container">
           <div class="buttons">
             <a href="#" class="run-code" id="runButton" onclick="runCode()"
@@ -56,9 +63,9 @@
         </div>
       </div>
     </main>
-    
+
     <script src="codespace.js"></script>
-    <script src="viewContent.js"></script>
+    <!-- <script src="viewContent.js"></script> -->
     <script>
       let myInterpreter = null;
       let runnerPid = 0;
@@ -169,24 +176,24 @@
         }
       });
 
-      function checkCompletion(output) {
-        console.log(output);
-        var userCode = output.slice(34, -24);
-        var correctCode = getCorrectAnswer();
+      // function checkCompletion(output) {
+      //   console.log(output);
+      //   var userCode = output.slice(34, -24);
+      //   var correctCode = getCorrectAnswer();
 
-        if (userCode === correctCode) {
-          let taskComplete = true;
-          checkmark(taskComplete);
-        } else {
-          let taskComplete = false;
-          checkmark(taskComplete);
-        }
-      }
+      //   if (userCode === correctCode) {
+      //     let taskComplete = true;
+      //     checkmark(taskComplete);
+      //   } else {
+      //     let taskComplete = false;
+      //     checkmark(taskComplete);
+      //   }
+      // }
 
-      function getCorrectAnswer() {
-        var correctCode = task1.answer;
-        return correctCode;
-      }
+      // function getCorrectAnswer() {
+      //   var correctCode = task1.answer;
+      //   return correctCode;
+      // }
     </script>
   </body>
 </html>

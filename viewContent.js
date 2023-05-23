@@ -3,6 +3,7 @@ displayContent();
 
 function displayContent() {
   document.getElementById("output").value = "";
+  console.log(localStorage);
 
   var tasksobject = JSON.parse(localStorage.getItem("tasksobject"));
 
@@ -17,6 +18,16 @@ function displayContent() {
 
   const hintContent = tasksobject["tasks"][CurrentTaskNumber]["hint"];
   document.getElementById("hint").innerHTML = hintContent;
+
+  var checkComplete = tasksobject["tasks"][CurrentTaskNumber]["complete"];
+  var nextTaskButton = document.getElementById("nextTaskButton");
+
+  if (checkComplete === true) {
+    nextTaskButton.classList.add("next-task-complete");
+  } else {
+    nextTaskButton.classList.remove("next-task-complete");
+  }
+
   return;
 }
 
@@ -29,6 +40,7 @@ function loadNextTask() {
   closeHintNewTask();
   workspace.clear();
   displayContent();
+
   let x = document.getElementById("checkmark");
   console.log(taskComplete);
 }

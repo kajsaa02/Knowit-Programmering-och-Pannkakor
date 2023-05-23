@@ -40,11 +40,15 @@ header {
   opacity: 0.8;
 }
 
+.goback {
+  position: absolute;
+  left: 20px;
+}
+
 .goback img {
-  width: 40px;
+  width: 100px;
   margin-left: 12px;
   transition: 0.2s;
-  transform: rotate(180deg);
 }
 
 @media only screen and (max-width: 600px) {
@@ -54,10 +58,10 @@ header {
 }
 
 .hero {
-  background-image: url(/assets/images/patternshort.png);
+  background-image: url(/assets/images/pattern.png);
   background-size: cover;
   background-position: center;
-  height: 200vh;
+  height: 130vh;
   position: relative;
   opacity: 50%;
 }
@@ -65,13 +69,12 @@ header {
 .hero-rectangle {
   width: 60vw;
   height: 40vh;
-  color: red;
-  opacity: 50%;
+  background-color: #333;
+  opacity: 80%;
   position: absolute;
   top: 30%;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 50;
 }
 
 .text-hero {
@@ -198,7 +201,10 @@ header {
 }
 
 .hint-container img {
-  height: 70%;
+  height: 50px;
+  border: 2px solid #ff00ff70;
+  padding: 5px 12px;
+  background-color: #121212;
 }
 
 .hint {
@@ -209,8 +215,12 @@ header {
 }
 
 .buttons {
-  margin-top: 8vh;
   color: #f1f0ed;
+  position: absolute;
+  width: 37%;
+  bottom: 2%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .prev-task:link,
@@ -236,8 +246,8 @@ header {
   margin: -15px 10px 10px 10px;
 }
 
-a.next-task,
-a.run-code {
+a.run-code,
+a.next-task-complete {
   background-color: #2a4843;
   font-weight: bold;
 }
@@ -333,4 +343,57 @@ a.run-code {
 
 .blocklyTreeSelected {
   color: #f0f;
+}
+
+.hub-main-new {
+  position: absolute;
+  top: 10vh;
+  width: 100%;
+}
+
+.module-container {
+  width: 60%;
+  background-color: #f1f0ed;
+  height: 120px;
+  margin: 20px auto 0 auto;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.hub-number-container {
+  background-color: #a5b1aa;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hub-number-container h2 {
+  color: #121212;
+  font-size: 60px;
+}
+
+.hub-text-container {
+  width: 80%;
+}
+
+.hub-text-container h3 {
+  margin-top: 15px;
+  margin-left: 10px;
+  font-size: 24px;
+}
+
+.hub-text-container p {
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.freemode {
+  position: absolute;
+  top: 70vh;
+  left: 40px;
+  height: 120px;
+  width: 120px;
+  background-color: #e4e1db;
 }

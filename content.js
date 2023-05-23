@@ -1,7 +1,8 @@
 const tasksobject = {
   tasks: [
     {
-      description: "this is a description",
+      description:
+        "Kod är som en uppsättning instruktioner som vi ger till datorn. Det skrivs med hjälp av speciella symboler och språk som datorn förstår. När koden körs, följer datorn instruktionerna steg för steg i ordning och utför olika uppgifter som att rita bilder, spela ljud eller visa text. Det är som att ge datorn en lista med saker att göra! \nDet första vi ska lära oss är att be datorn skriva ut en text. Till höger finns ett block som heter “skriv”. Dra ut det blocket till höger, och ändra där det står “abc” till vad du vill att datorn ska skriva ut.",
       task: 'Få datorn att skriva ut "Hello World!"',
       hint: "this is the hint",
       answer: "Hello World!",

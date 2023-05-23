@@ -613,6 +613,8 @@ function setComplete() {
 
   localStorage.setItem("tasksobject", JSON.stringify(tasksobject));
 
+  var nextTaskButton = document.getElementById("nextTaskButton");
+  nextTaskButton.classList.add("next-task-complete");
   return;
 }
 

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programmering och Pannkakor -- Knowit</title>
+    <link rel="stylesheet" href="main.css" />
+
+    <script>
+      const clickedModuleOne = 1;
+      const clickedModuleTwo = 2;
+      const clickedModuleThree = 3;
+      const clickedModuleFour = 4;
+      //var tasksobject = JSON.parse(localStorage.getItem("tasksobject") || "[]");
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="./index.html">
+          <img
+            src="/assets/images/Logotype-Knowit-Digital-white.png"
+            alt="Knowit logo"
+          />
+        </a>
+      </div>
+    </header>
+    <main class="hub-main-new">
+      <div
+        class="module-one-new module-container"
+        onclick="saveClickedTask(clickedModuleOne)"
+      >
+        <div class="hub-number-container"><h2>1</h2></div>
+        <div class="hub-text-container">
+          <h3>Variabler och Inputs</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati
+            ea id itaque, assumenda laudantium, totam dolor, dolore at sapiente
+            soluta eos quae excepturi cupiditate! Aut tempore doloremque
+            laboriosam magnam vel.
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="module-two-new module-container"
+        onclick="saveClickedTask(clickedModuleTwo)"
+      >
+        <div class="hub-number-container"><h2>2</h2></div>
+        <div class="hub-text-container">
+          <h3>Loopar</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati
+            ea id itaque, assumenda laudantium, totam dolor, dolore at sapiente
+            soluta eos quae excepturi cupiditate! Aut tempore doloremque
+            laboriosam magnam vel.
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="module-three-new module-container"
+        onclick="saveClickedTask(clickedModuleThree)"
+      >
+        <div class="hub-number-container"><h2>3</h2></div>
+        <div class="hub-text-container">
+          <h3>Om-satser</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati
+            ea id itaque, assumenda laudantium, totam dolor, dolore at sapiente
+            soluta eos quae excepturi cupiditate! Aut tempore doloremque
+            laboriosam magnam vel.
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="module-four-new module-container"
+        onclick="saveClickedTask(clickedModuleFour)"
+      >
+        <div class="hub-number-container"><h2>4</h2></div>
+        <div class="hub-text-container">
+          <h3>Variabler och Inputs</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati
+            ea id itaque, assumenda laudantium, totam dolor, dolore at sapiente
+            soluta eos quae excepturi cupiditate! Aut tempore doloremque
+            laboriosam magnam vel.
+          </p>
+        </div>
+      </div>
+
+      <div class="freemode" onclick="gotoSandbox();">
+        <img src="#" alt="icon" />
+        <h3>Friläge</h3>
+      </div>
+    </main>
+    <script src="content.js"></script>
+    <script>
+      function saveClickedTask(clikedModule) {
+        if (clikedModule === 1) {
+          var taskFound = false;
+          var i = 0;
+          if (tasksobject["tasks"][3]["complete"] == true) {
+            localStorage.setItem("currentTask", "0");
+          } else {
+            while (taskFound === false) {
+              if (tasksobject["tasks"][i]["complete"] == false) {
+                taskFound = true;
+                localStorage.setItem("currentTask", i);
+              } else {
+                i++;
+              }
+            }
+          }
+        }
+
+        if (clikedModule === 2) {
+          var taskFound = false;
+          var i = 4;
+          if (tasksobject["tasks"][7]["complete"] == true) {
+            localStorage.setItem("currentTask", "0");
+          } else {
+            while (taskFound === false) {
+              if (tasksobject["tasks"][i]["complete"] == false) {
+                taskFound = true;
+                localStorage.setItem("currentTask", i);
+              } else {
+                i++;
+              }
+            }
+          }
+        }
+
+        if (clikedModule === 3) {
+          var taskFound = false;
+          var i = 8;
+          if (tasksobject["tasks"][11]["complete"] == true) {
+            localStorage.setItem("currentTask", "0");
+          } else {
+            while (taskFound === false) {
+              if (tasksobject["tasks"][i]["complete"] == false) {
+                taskFound = true;
+                localStorage.setItem("currentTask", i);
+              } else {
+                i++;
+              }
+            }
+          }
+        }
+
+        if (clikedModule === 4) {
+          var taskFound = false;
+          var i = 12;
+          if (tasksobject["tasks"][15]["complete"] == true) {
+            localStorage.setItem("currentTask", "0");
+          } else {
+            while (taskFound === false) {
+              if (tasksobject["tasks"][i]["complete"] == false) {
+                taskFound = true;
+                localStorage.setItem("currentTask", i);
+              } else {
+                i++;
+              }
+            }
+          }
+        }
+
+        window.open("codingspace.html", "_self");
+      }
+    </script>
+  </body>
+</html>
