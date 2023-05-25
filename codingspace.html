@@ -21,7 +21,7 @@
     <main id="canvas">
       <header>
         <div class="goback">
-          <a href="./hub.html">
+          <a href="./hubcopy.html">
             <img src="/assets/icons/toHub.png" alt="arrow back" />
             <!-- <p class="nav-goback">go to hub</p> -->
           </a>
@@ -229,10 +229,11 @@
         console.log(output);
         var userCode = output.slice(34, -24);
         var tasksobject = JSON.parse(localStorage.getItem("tasksobject"));
+        var currentTaskNo = localStorage.getItem("currentTask");
         console.log(tasksobject);
 
         if (tasksobject["tasks"][currentTaskNo]["facitcheck"] === true) {
-          var correctCode = getCorrectAnswer();
+          var correctCode = tasksobject["tasks"][currentTaskNo]["answer"];
 
           if (userCode === correctCode) {
             let taskComplete = true;
@@ -244,13 +245,6 @@
             checkmark(taskComplete);
           }
         }
-      }
-
-      function getCorrectAnswer() {
-        var tasksobject = JSON.parse(localStorage.getItem("tasksobject"));
-
-        var correctCode = tasksobject["tasks"][currentTaskNo]["answer"];
-        return correctCode;
       }
     </script>
   </body>

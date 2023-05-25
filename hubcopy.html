@@ -91,9 +91,11 @@
         </div>
       </div>
 
-      <div class="freemode" onclick="gotoSandbox();">
-        <img src="#" alt="icon" />
-        <h3>Friläge</h3>
+      <div class="freemode">
+        <a href="/sandbox.html">
+          <img src="" alt="icon" />
+          <h3>Friläge</h3>
+        </a>
       </div>
     </main>
     <script src="content.js"></script>
@@ -108,6 +110,7 @@
       }
 
       var tasksobject = JSON.parse(localStorage.getItem("tasksobject"));
+
       function saveClickedTask(clikedModule) {
         if (clikedModule === 1) {
           var taskFound = false;

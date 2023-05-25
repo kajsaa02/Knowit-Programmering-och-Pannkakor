@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 *,
 *:visited,
 *:link {
@@ -92,6 +96,33 @@ header {
   color: #f1f0ed;
   opacity: 100%;
   font-weight: bold;
+}
+
+.about {
+  display: flex;
+  color: #e4e1db;
+  justify-items: center;
+  align-items: center;
+  margin: 100px auto;
+  width: 80%;
+}
+
+.about-text {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.about-text h2 {
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+.about-image {
+  width: 40%;
+}
+
+.imgholder {
+  margin: 0 auto;
 }
 
 .container {
@@ -205,6 +236,11 @@ header {
   border: 2px solid #ff00ff70;
   padding: 5px 12px;
   background-color: #121212;
+}
+
+.hint-container img:hover {
+  border: 2px solid #f0f;
+  transition: 0.5s border;
 }
 
 .hint {

@@ -28,6 +28,8 @@ function displayContent() {
   var checkComplete = tasksobject["tasks"][CurrentTaskNumber]["complete"];
   var nextTaskButton = document.getElementById("nextTaskButton");
 
+  console.log(tasksobject["tasks"][CurrentTaskNumber]["complete"]);
+
   if (tasksobject["tasks"][CurrentTaskNumber]["complete"] === true) {
     x.style.display = "block";
     nextTaskButton.classList.add("next-task-complete");
@@ -45,28 +47,33 @@ function displayContent() {
 function loadNextTask() {
   var currentTaskNumber = localStorage.getItem("currentTask");
   setComplete();
-  currentTaskNumber++;
-  localStorage.setItem("currentTask", currentTaskNumber);
+  console.log(currentTaskNumber);
 
-  closeHintNewTask();
-  workspace.clear();
-  displayContent();
-
-  let x = document.getElementById("checkmark");
-  console.log(taskComplete);
-}
-
-function loadPrevTask() {
-  var CurrentTaskNumber = localStorage.getItem("currentTask");
-  if (CurrentTaskNumber == 0) {
+  if (currentTaskNumber == 15) {
     return;
   } else {
-    CurrentTaskNumber--;
-    localStorage.setItem("currentTask", CurrentTaskNumber);
+    currentTaskNumber++;
+    localStorage.setItem("currentTask", currentTaskNumber);
+
     closeHintNewTask();
     workspace.clear();
     displayContent();
-    checkmark();
+
+    let x = document.getElementById("checkmark");
+    console.log(taskComplete);
+  }
+}
+
+function loadPrevTask() {
+  var currentTaskNumber = localStorage.getItem("currentTask");
+  if (currentTaskNumber == 0) {
+    return;
+  } else {
+    currentTaskNumber--;
+    localStorage.setItem("currentTask", currentTaskNumber);
+    closeHintNewTask();
+    workspace.clear();
+    displayContent();
     console.log(taskComplete);
   }
 }
