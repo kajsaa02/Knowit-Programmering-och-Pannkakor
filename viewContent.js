@@ -34,13 +34,6 @@ function displayContent() {
     x.style.display = "block";
     nextTaskButton.classList.add("next-task-complete");
   }
-
-  // if (checkComplete === true) {
-  //   nextTaskButton.classList.add("next-task-complete");
-  // } else {
-  //   nextTaskButton.classList.remove("next-task-complete");
-  // }
-
   return;
 }
 
