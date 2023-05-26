@@ -13,7 +13,7 @@
     <script src="./node_modules/blockly/blockly_compressed.js"></script>
     <script src="./node_modules/blockly/blocks_compressed.js"></script>
     <script src="./node_modules/blockly/javascript_compressed.js"></script>
-    <script src="/node_modules/blockly/msg/sv.js">
+    <script src="./node_modules/blockly/msg/sv.js">
       Blockly.setLocale(Sv);
     </script>
   </head>
@@ -21,15 +21,15 @@
     <main id="canvas">
       <header>
         <div class="goback">
-          <a href="./hubcopy.html">
-            <img src="/assets/icons/toHub.png" alt="arrow back" />
+          <a href="./hub.html">
+            <img src="./assets/icons/toHub.png" alt="arrow back" />
             <!-- <p class="nav-goback">go to hub</p> -->
           </a>
         </div>
         <div class="logo">
           <a href="./index.html">
             <img
-              src="/assets/images/Logotype-Knowit-Digital-white.png"
+              src="./assets/images/Logotype-Knowit-Digital-white.png"
               alt="Knowit logo"
             />
           </a>
@@ -54,7 +54,7 @@
           <div class="task">
             <div class="checkbox">
               <img
-                src="/assets/icons/Tick-Digital-lollipop.svg"
+                src="./assets/icons/Tick-Digital-lollipop.svg"
                 alt="checkmark"
                 id="checkmark"
               />
@@ -78,7 +78,7 @@
         <div class="buttons-container">
           <div class="hint-container">
             <img
-              src="/assets/icons/Light-bulb-Digital-black.svg"
+              src="./assets/icons/Light-bulb-Digital-black.svg"
               alt="hint button"
               onclick="openHint()"
             />
@@ -244,6 +244,10 @@
             console.log("i else");
             checkmark(taskComplete);
           }
+        } else {
+          var nextTaskButton = document.getElementById("nextTaskButton");
+
+          nextTaskButton.classList.add("next-task-complete");
         }
       }
     </script>
